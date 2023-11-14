@@ -36,10 +36,10 @@
                         </div>
                         <div class="mb3 col-md-6">
                             <label for="">Status</label>
-                            <input type="checkbox" name="status" {{$category->status == 1 ? 'checked':''}}>
+                            <input type="checkbox" name="status" style="width:30px; height:30px;" {{$category->status == 1 ? 'checked':''}}>
                         </div>
 
-                        <div class="con-md-12 mb3">
+                        {{-- <div class="con-md-12 mb3">
                             <hr>
                             <h4><b>Tags</b></h4>
                         </div>
@@ -57,7 +57,7 @@
                         <div class="mb3 col-md-12">
                             <label for="">Meta description</label>
                             <textarea type="text" name="meta_description" class="form-control" rows="3" required>{{$category->meta_description}}</textarea>
-                        </div>
+                        </div> --}}
 
                         <div class="mb3 col-md-12">
                             <button type="submit" class="btn btn-primary float-end">Update</button>

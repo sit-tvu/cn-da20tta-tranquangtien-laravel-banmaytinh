@@ -26,9 +26,6 @@ class CategoryFormRequest extends FormRequest
                 "slug"=> ["required","string"],
                 "description"=>["required","string"],
                 "image"=>["nullable","mimes:jpg,jpeg,png,gif,webp"],
-                "meta_title"=>["required","string"],
-                "meta_keyword"=> ["required","string"],
-                "meta_description"=>["required","string"],
         ];
     }
 }

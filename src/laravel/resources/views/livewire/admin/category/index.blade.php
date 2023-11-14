@@ -43,7 +43,9 @@
                         <tr>
                                 <th>ID</th>
                                 <th>NAME</th>
+                                <th>SLUG</th>
                                 <th>STATUS</th>
+                                <th>IMAGE</th>
                                 <th>ACTION</th>
                         </tr>
                     </thead>
@@ -53,7 +55,9 @@
                             <tr>
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->name}}</td>
+                                    <td>{{ $category->slug }}</td>
                                     <td>{{$category->status == '1' ? 'Hidden':'Visible'}}</td>
+                                    <td><img src="{{asset('/uploads/category/'.$category->image)}}" alt="error" width="100px" height="100px"></td>
                                     <td>
                                         <a href="{{url('admin/category/'.$category->id.'/edit')}}" class="btn btn-warning" style="border-color: black; border-width: 2px; border-style: solid; border-radius: 5px;">EDIT</a>
                                         <a href="#" wire:click="deleteCategory({{$category->id}})" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" style="border-color: black; border-width: 2px; border-style: solid; border-radius: 5px;"><b>DELETE</b></a>

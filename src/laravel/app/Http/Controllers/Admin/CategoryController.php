@@ -30,10 +30,6 @@ class CategoryController extends Controller
             $file->move('uploads/category/',$filename);
         $category->image = $filename;
         }
-
-        $category->meta_title = $validatedData["meta_title"];
-        $category->meta_keyword = $validatedData["meta_keyword"];
-        $category->meta_description = $validatedData["meta_description"];
         $category->status = $request->status == true ? '1':'0' ;
         $category->save();
         return redirect('admin/category')->with('message','add success!');
@@ -62,10 +58,6 @@ class CategoryController extends Controller
             $file->move('uploads/category/',$filename);
             $category->image = $filename;
         }
-
-        $category->meta_title = $validatedData["meta_title"];
-        $category->meta_keyword = $validatedData["meta_keyword"];
-        $category->meta_description = $validatedData["meta_description"];
         $category->status = $request->status == true ? '1':'0' ;
         $category->update();
         return redirect('admin/category')->with('message','update success!');
