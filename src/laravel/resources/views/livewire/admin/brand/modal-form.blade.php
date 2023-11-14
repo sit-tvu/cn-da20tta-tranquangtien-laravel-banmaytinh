@@ -53,7 +53,7 @@
             <div class="mb-3">
                 <label>STATUS</label>
                 {{-- <input type="checkbox" wire:model.defer="status" style="width:30px; height:30px;" {{ $this->status == 0 ? '':'checked' }}> <hr> --}}
-                <input type="checkbox" checked="{{ $status == 1 ? 'checked' : '' }}" wire:model.defer="status" style="width:30px; height:30px;">
+                <input type="checkbox" {{ $brand->status == 1 ? 'checked' : '' }} wire:model.defer="status" style="width:30px; height:30px;">
                 <h6 style="color: red;">checked = Hidden, Un-checked = Visible</h6>
             </div>
             
