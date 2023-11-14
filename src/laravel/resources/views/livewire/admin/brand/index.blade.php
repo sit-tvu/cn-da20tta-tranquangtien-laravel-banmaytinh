@@ -29,7 +29,7 @@
                                             <td>{{ $brand->status == 1 ? 'hidden':'visible' }}</td>
                                             <td>
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#updateBrandModal" wire:click ="editBrand({{$brand->id}})" class="btn btn-warning" style="border-color: black; border-width: 2px; border-style: solid; border-radius: 5px;">Edit</a>
-                                                <a href="" class="btn btn-danger" style="border-color: black; border-width: 2px; border-style: solid; border-radius: 5px;">Delete</a>
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#deleteBrandModal" wire:click ="deleteBrand({{$brand->id}})" class="btn btn-danger" style="border-color: black; border-width: 2px; border-style: solid; border-radius: 5px;">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

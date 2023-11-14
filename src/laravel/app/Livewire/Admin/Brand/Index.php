@@ -27,6 +27,7 @@ class Index extends Component
         $this->name = NULL;
         $this->slug = NULL;
         $this->status = NULL;
+        $this->brand_id=NULL;
     }
     public function storeBrand()
     {
@@ -60,7 +61,14 @@ class Index extends Component
             $this -> resetInput();
      }
      
-
+     public function deleteBrand($brand_id){
+        $this->brand_id = $brand_id;
+     }
+     public function destroyBrand(){
+        Brand::find($this->brand_id)->delete();
+            session()->flash('message','Delete success!');
+            $this -> resetInput();
+     }
     
     public function render()
     {
