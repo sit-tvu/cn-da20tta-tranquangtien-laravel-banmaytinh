@@ -8,6 +8,14 @@
                     <a href="{{url('admin/products')}}" class="btn btn-primary btn-sm text-white float-end">Back</a>
                 </h3>
                 <div class="card-body">
+                    @if ($errors -> any())
+                        <div class="alert alert-warning">
+                            @foreach ($errors -> all() as  $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                        </div>
+                    @endif
+
                 <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -53,7 +61,7 @@
 
                                 <div class="mb-3">
                                     <label >SLUG</label>
-                                    <input type="text" name="slug" class="form-control">
+                                    <input type="text" name="slug" class="form-control" required>
                                 </div>
 
                         </div>
@@ -62,21 +70,21 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >COST</label>
-                                    <input type="text" name="cost" class="form-control">
+                                    <input type="text" name="cost" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >SALE COST</label>
-                                    <input type="text" name="salecost" class="form-control">
+                                    <input type="text" name="sale_cost" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >QUANTITY</label>
-                                    <input type="text" name="quantity" class="form-control">
+                                    <input type="text" name="quantity" class="form-control" required>
                                 </div>
                             </div>
 
@@ -88,14 +96,14 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >COLOR</label>
-                                    <input type="text" name="color" class="form-control">
+                                    <input type="text" name="color" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >OPTION</label>
-                                    <input type="text" name="option" class="form-control">
+                                    <input type="text" name="option" class="form-control" required>
                                 </div>
                             </div>
                         </div>    

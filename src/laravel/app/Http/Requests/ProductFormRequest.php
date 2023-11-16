@@ -38,39 +38,39 @@ class ProductFormRequest extends FormRequest
                 ],
             'slug' => [
                 'string',
-                'required',
+                // 'required',
                 ],
             'cost' => [
                 'integer',
-                'required'
+                // 'required'
                 ],
-            'salecost' => [
+            'sale_cost' => [
                 'integer',
-                'required'
+                // 'required'
                 ],
             'quantity' => [
                 'integer',
-                'required'
+                // 'required'
                 ],
             'color' => [
                 'string',
-                'required'
+                // 'required'
                 ],
             'option' => [
                 'string',
-                'required'
+                // 'required'
                 ],
             'status' => [
-                'integer',
-                'required'
+                
+                'nullable'
                 ],
             'trending' => [
-                'integer',
-                'required'
+                
+                'nullable'
                 ],
             'description' => [
-                'string',
-            ]
+                'nullable',
+                ]   
         ];
     }
 }
