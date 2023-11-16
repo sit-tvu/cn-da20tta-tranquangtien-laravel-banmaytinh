@@ -6,7 +6,7 @@
           <span class="menu-title">DASHBOARD</span>
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="mdi mdi-folder menu-icon"></i>
           <span class="menu-title">CATEGORY</span>
@@ -18,13 +18,20 @@
             <li class="nav-item"> <a class="nav-link" href="/admin/category/create">Add Category</a></li>
           </ul>
         </div>
-      </li>
+      </li> --}}
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <i class="mdi mdi-view-headline menu-icon"></i>
-          <span class="menu-title">PRODUCT</span>
+        <a class="nav-link" href="/admin/category">
+          <i class="mdi mdi-folder menu-icon"></i>
+          <span class="menu-title">CATEGORY</span>
         </a>
       </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/products">
+            <i class="mdi mdi-television menu-icon"></i>
+            <span class="menu-title">PRODUCT</span>
+          </a>
+        </li>
       <li class="nav-item">
         <a class="nav-link" href="/admin/brands">
           <i class="mdi mdi-plus-circle menu-icon"></i>
@@ -32,7 +39,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/tables/basic-table.html">
+        <a class="nav-link" href="/admin/user">
           <i class="mdi mdi-account-multiple-plus menu-icon"></i>
           <span class="menu-title">USER</span>
         </a>
@@ -59,11 +66,11 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="documentation/documentation.html">
           <i class="mdi mdi-file-document-box-outline menu-icon"></i>
           <span class="menu-title">Documentation</span>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </nav>
