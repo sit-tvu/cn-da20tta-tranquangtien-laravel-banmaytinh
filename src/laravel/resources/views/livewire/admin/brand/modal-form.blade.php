@@ -3,29 +3,29 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Brand</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">THÊM THƯƠNG HIỆU</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form wire:submit.prevent="storeBrand">
         <div class="modal-body">
             <div class="mb-3">
-                <label>BRAND NAME</label>
+                <label>TÊN THƯƠNG HIỆU</label>
                 <input type="text" class="form-control" wire:model.defer="name" required>
             </div>
             <div class="mb-3">
-                <label>BRAND SLUG</label>
+                <label>ĐƯỜNG DẪN</label>
                 <input type="text" class="form-control" wire:model.defer="slug" required>
             </div>
             <div class="mb-3">
-                <label>STATUS</label>
+                <label>TRẠNG THÁI</label>
                 <input type="checkbox" wire:model.defer="status" style="width:30px; height:30px;"> <hr>
-                <h6 style="color: red;">checked = Hidden, Un-checked = Visible</h6>
+                <h6 style="color: red;">check = ẩn</h6>
             </div>
             
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ĐÓNG</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">LƯU</button>
         </div>
     </form>
     </div>
@@ -37,30 +37,30 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Brand</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">CẬP NHẬT</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form wire:submit.prevent="updateBrand">
         <div class="modal-body">
             <div class="mb-3">
-                <label>BRAND NAME</label>
+                <label>TÊN THƯƠNG HIỆU</label>
                 <input type="text" class="form-control" wire:model.defer="name" required>
             </div>
             <div class="mb-3">
-                <label>BRAND SLUG</label>
+                <label>ĐƯỜNG DẪN</label>
                 <input type="text" class="form-control" wire:model.defer="slug" required>
             </div>
             <div class="mb-3">
-                <label>STATUS</label>
+                <label>TRẠNG THÁI</label>
                 {{-- <input type="checkbox" wire:model.defer="status" style="width:30px; height:30px;" {{ $this->status == 0 ? '':'checked' }}> <hr> --}}
                 <input type="checkbox" {{ $status == 1 ? 'checked' : '' }} wire:model.defer="status" style="width:30px; height:30px;">
-                <h6 style="color: red;">checked = Hidden, Un-checked = Visible</h6>
+                <h6 style="color: red;">check = ẩn</h6>
             </div>
             
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="resetInput()">Close</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="resetInput()">ĐÓNG</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">CẬP NHẬT</button>
         </div>
     </form>
     </div>
@@ -73,16 +73,16 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Brand</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">XÓA THƯƠNG HIỆU</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form wire:submit.prevent="destroyBrand">
         <div class="modal-body">
-            <h4>Are you sure?</h4>
+            <h4>Bạn chắc chứ?</h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="resetInput()">Close</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Delete</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="resetInput()">ĐÓNG</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">XÓA</button>
         </div>
     </form>
     </div>

@@ -7,8 +7,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Product
-                            <a href="{{url('admin/products/create')}}" class="btn btn-primary btn-sm float-end">Add Product</a>
+                        <h3>SẢN PHẨM
+                            <a href="{{url('admin/products/create')}}" class="btn btn-primary btn-sm float-end">THÊM SẢN PHẨM</a>
                         </h3>
                         <div class="card-body">
                             

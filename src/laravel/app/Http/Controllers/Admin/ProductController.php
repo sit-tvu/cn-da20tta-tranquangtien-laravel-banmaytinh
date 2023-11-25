@@ -28,6 +28,7 @@ class ProductController extends Controller
 
             $validatedData = $request->validated() ;
             $category = Category::findOrFail($validatedData["category_id"]);
+            
             $product = $category->products()->create([
             
                "category_id" => $validatedData["category_id"],
@@ -44,6 +45,22 @@ class ProductController extends Controller
                 "description" => $validatedData["description"],
 
             ]);
-            return $product ->id;
+            
+            if($request->hasFile('image')) {
+                $uploadPath = 'uploads/products/';
+                
+                foreach($request->file('image') as $imageFile){
+                $extention = $imageFile->getClientOriginalExtension(); $filename = time().'.'.$extention;
+                $imageFile->move($uploadPath, $filename);
+                $finalImagePathName = $uploadPath.'-'.$filename;
+                
+                $product->productImages()->create([
+                'product_id' => $product->id,
+                'image' => $finalImagePathName,
+                ]);
+            // return $product ->id;
         }
+    }
+        return redirect('admin/products')->with('message','Thêm thành công!');
+}
 }

@@ -70,7 +70,12 @@ class ProductFormRequest extends FormRequest
                 ],
             'description' => [
                 'nullable',
-                ]   
+            ],   
+            
+            'image' => [
+                'nullable',
+                // 'image|mines:jpg,jepg,webp,png,svg'
+            ]
         ];
     }
 }

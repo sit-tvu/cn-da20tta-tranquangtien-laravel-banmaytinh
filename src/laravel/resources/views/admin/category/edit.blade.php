@@ -4,8 +4,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>Edit Category
-                    <a href="{{ url('admin/category') }}" class="btn btn-primary btn-sm text-white float-end">Back</a>
+                <h3>SỬA DANH MỤC
+                    <a href="{{ url('admin/category') }}" class="btn btn-primary btn-sm text-white float-end">TRỞ VỀ</a>
                 </h3>
                 <div class="card-body">
 
@@ -15,27 +15,27 @@
                         
                     <div class="row">
                         <div class="mb3 col-md-6">
-                            <label for="">Name</label>
+                            <label for="">TÊN SẢN PHẨM</label>
                             <input type="text" name="name" class="form-control" value="{{$category->name}}" required>
                         </div>
 
                         <div class="mb3 col-md-6">
-                            <label for="">Slug</label>
+                            <label for="">ĐƯỜNG DẪN</label>
                             <input type="text" name="slug" class="form-control" value="{{$category->slug}}" required>
                         </div>
 
                         <div class="mb3 col-md-12">
-                            <label for="">Description</label>
+                            <label for="">MÔ TẢ</label>
                             <textarea type="text" name="description" class="form-control" rows="3" required>{{$category->description}}</textarea>
                         </div>
 
                         <div class="mb3 col-md-6">
-                            <label for="">Image</label>
+                            <label for="">HÌNH ẢNH</label>
                             <input type="file" name="image" class="form-control">
                             <img src="{{asset('/uploads/category/'.$category->image)}}" alt="Image not exist!" width="150px" height="150px">
                         </div>
                         <div class="mb3 col-md-6">
-                            <label for="">Status</label>
+                            <label for="">TRẠNG THÁI</label>
                             <input type="checkbox" name="status" style="width:30px; height:30px;" {{$category->status == 1 ? 'checked':''}}>
                         </div>
 
@@ -60,7 +60,7 @@
                         </div> --}}
 
                         <div class="mb3 col-md-12">
-                            <button type="submit" class="btn btn-primary float-end">Update</button>
+                            <button type="submit" class="btn btn-primary float-end">CẬP NHẬT</button>
                         </div>
                     </div>
                         
