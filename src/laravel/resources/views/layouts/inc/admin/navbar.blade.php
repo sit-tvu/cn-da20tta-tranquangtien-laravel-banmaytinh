@@ -2,7 +2,7 @@
     <div class="navbar-brand-wrapper d-flex justify-content-center">
       <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
         {{-- <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a> --}}
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="/admin/dashboard"><img src="images/logo.png" alt="logo"/></a>
         {{-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a> --}}
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-sort-variant"></span>
@@ -123,15 +123,15 @@
             <span class="nav-profile-name">{{ Auth::user()->name }}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
+            {{-- <a class="dropdown-item">
               <i class="mdi mdi-settings text-primary"></i>
               Settings
-            </a>
+            </a> --}}
 
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-            <i class="mdi mdi-logout text-primary"></i>{{ __('Logout') }}
+            <i class="mdi mdi-logout text-primary"></i>{{ __('THOÁT') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

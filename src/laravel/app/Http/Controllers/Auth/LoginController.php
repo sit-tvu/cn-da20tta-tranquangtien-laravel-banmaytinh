@@ -32,7 +32,7 @@ class LoginController extends Controller
             return redirect('admin/dashboard')->with('message','CHÀO MỪNG ĐẾN VỚI DASHBOARD');
         }
             else{
-                return redirect('/home')->with('status','Đăng nhập thành công!');
+                return redirect('/')->with('status','Đăng nhập thành công!');
             }
     
 }

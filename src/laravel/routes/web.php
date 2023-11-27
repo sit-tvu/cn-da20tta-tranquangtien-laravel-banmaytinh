@@ -14,16 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
@@ -44,4 +44,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
             Route::get('/products/create','create');
             Route::post('/products','store');
         });
+        Route::controller(App\Http\Controllers\Admin\AdminUserController::class)->group(function(){
+            Route::get('/users','index');
+        });
+
 });

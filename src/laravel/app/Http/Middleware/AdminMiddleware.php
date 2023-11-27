@@ -15,7 +15,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (!Auth::user()->role_as=='1') {
-            return redirect('/home') -> with('status', 'You have no access!');
+            return redirect('/');
         }
         return $next($request);
     }
