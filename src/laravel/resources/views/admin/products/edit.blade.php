@@ -1,23 +1,25 @@
 @extends('layouts.admin')
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>THÊM SẢN PHẨM
+                <h3>SỬA SẢN PHẨM
                     <a href="{{url('admin/products')}}" class="btn btn-primary btn-sm text-white float-end">TRỞ VỀ</a>
                 </h3>
                 <div class="card-body">
-                    @if ($errors -> any())
+                    {{-- @if ($errors -> any())
                         <div class="alert alert-warning">
                             @foreach ($errors -> all() as  $error)
                                 <div>{{ $error }}</div>
                             @endforeach
                         </div>
-                    @endif
+                    @endif --}}
 
-                <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/products/'.$product->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">THÔNG TIN</button>
@@ -41,7 +43,7 @@
                                     <label >DANH MỤC SẢN PHẨM</label>
                                     <select class="form-control" name="category_id">
                                         @foreach ($categories as $category )
-                                            <option value="{{ $category -> id }}">{{ $category -> name }}</option>
+                                            <option value="{{ $category -> id }}" {{  $category->name == $product->category? 'selected':'' }}> {{ $category -> name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -49,19 +51,19 @@
                                     <label >THƯƠNG HIỆU</label>
                                     <select class="form-control" name="brand_id">
                                         @foreach ($brands as $brand )
-                                            <option value="{{ $brand -> id }}">{{ $brand -> name }}</option>
+                                            <option value="{{ $brand -> id }}" {{  $brand->name == $product->brand? 'selected':'' }}> {{ $brand -> name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
 
                                 <div class="mb-3">
                                     <label >TÊN SẢN PHẨM</label>
-                                    <input type="text" name="name" class="form-control" required>
+                                    <input type="text" name="name" class="form-control" value="{{ $product->name }}" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label >ĐƯỜNG DẪN</label>
-                                    <input type="text" name="slug" class="form-control" required>
+                                    <input type="text" name="slug" class="form-control" value="{{ $product->slug }}" required>
                                 </div>
 
                         </div>
@@ -70,21 +72,21 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >GIÁ GỐC</label>
-                                    <input type="text" name="cost" class="form-control" required>
+                                    <input type="text" name="cost" class="form-control" value="{{ $product->cost }}" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >GIÁ GIẢM</label>
-                                    <input type="text" name="sale_cost" class="form-control" required>
+                                    <input type="text" name="sale_cost" class="form-control" value="{{ $product->sale_cost }}" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >SỐ LƯỢNG</label>
-                                    <input type="text" name="quantity" class="form-control" required>
+                                    <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}" required>
                                 </div>
                             </div>
 
@@ -96,14 +98,14 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >MÀU SẮC</label>
-                                    <input type="text" name="color" class="form-control" required>
+                                    <input type="text" name="color" class="form-control" value="{{ $product->color }}" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >PHIÊN BẢN</label>
-                                    <input type="text" name="option" class="form-control" required>
+                                    <input type="text" name="option" class="form-control" value="{{ $product->option }}" required>
                                 </div>
                             </div>
                         </div>    
@@ -112,14 +114,14 @@
                             <div class="col-md-4">
                             <div class="mb-3">
                                 <label >TRẠNG THÁI</label>
-                                <input type="checkbox" name="status" class="" style="width: 30px; height : 30px;">
+                                <input type="checkbox" name="status" {{ $product->status==1 ? 'checked':'' }} style="width: 30px; height : 30px;">
                             </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label >BÁN CHẠY</label>
-                                    <input type="checkbox" name="trending" class="" style="width: 30px; height : 30px;">
+                                    <input type="checkbox" name="trending" {{ $product->trending==1 ? 'checked':'' }} class="" style="width: 30px; height : 30px;">
                                 </div>
                             </div>
                         </div>
@@ -129,7 +131,7 @@
                             <div class="col-md-12">
                               <div class="mb-3">
                                 <label>MÔ TẢ</label>
-                                <textarea name="description" class="form-control" rows="4"></textarea>
+                                <textarea name="description" class="form-control"  rows="4">{{ $product->description }}</textarea>
                               </div>
                             </div>
                         </div>
@@ -140,6 +142,17 @@
                                 <div class="mb-3">
                                     <label for="">CHỌN ẢNH</label>
                                     <input type="file" name="image[]" multiple class="form-control">
+                                </div>
+                                <div>
+                                    
+                                    @if($product->productImages)
+                                        @foreach ($product->productImages as $image) 
+                                        <img src="{{ asset($image->image) }}" style="width: 80px; height:80px;" class="me-4" alt="lỗi" />
+                                        @endforeach
+                                    @else
+                                    <h5>Không có ảnh để hiển thị </h5> 
+                                    @endif
+
                                 </div>
                         </div>
                         {{-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> --}}

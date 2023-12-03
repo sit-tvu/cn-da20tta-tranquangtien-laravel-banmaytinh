@@ -27,9 +27,30 @@
         </div>
 
         <nav>
-            <ul>
-                <li><a href="#">TRANG CHỦ</a></li>
-                <li><a href="#">SẢN PHẨM</a></li>
+            <ul class="navigation">
+                <li><a href="{{ url('/') }}">TRANG CHỦ</a></li>
+
+                <li class="nav"><a href="{{ url('/products') }}">SẢN PHẨM</a>
+                    <ul class="brands">
+                        <li>
+                            <a href="">APPLE</a>
+                        </li>
+                        <li>
+                            <a href="">LENOVO</a>
+                        </li>
+                        <li>
+                            <a href="">ACER</a>
+                        </li>
+                        <li>
+                            <a href="">ASUS</a>
+                        </li>
+                        <li>
+                            <a href="">DELL</a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li><a href="#">LIÊN HỆ</a></li>
                 @if (Route::has('login'))
     <li>

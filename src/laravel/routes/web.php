@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
+
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -43,6 +45,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
             Route::get('/products','index');
             Route::get('/products/create','create');
             Route::post('/products','store');
+            Route::get('/products/{product}/edit','edit');
         });
         Route::controller(App\Http\Controllers\Admin\AdminUserController::class)->group(function(){
             Route::get('/users','index');
