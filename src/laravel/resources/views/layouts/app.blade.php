@@ -10,12 +10,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    {{-- <link rel="dns-prefetch" href="//fonts.bunny.net"> --}}
+    {{-- <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{asset('assets/css/boostrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/boostrap.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{'user/css/bootstrap.min.css'}}">
+    <link rel="stylesheet" href="{{'user/css/style.css'}}">
+    <script src="{{'user/js/jquery-3.3.1.slim.min.js'}}"></script>
+    <script src="{{'user/js/bootstrap.min.js'}}"></script>
+    <script src="{{'user/js/index.js'}}"></script>
     @livewireStyles
 </head>
 <body>
@@ -41,13 +46,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng Nhập') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Đăng Ký') }}</a>
                                 </li>
                             @endif
                         @else
@@ -78,8 +83,8 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script>
+    {{-- <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script> --}}
     @livewireScripts
 </body>
 </html>

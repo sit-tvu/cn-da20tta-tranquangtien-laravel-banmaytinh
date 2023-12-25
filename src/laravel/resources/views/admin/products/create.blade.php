@@ -38,7 +38,7 @@
                       <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade border p-5  show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                 <div class="mb-3">
-                                    <label >DANH MỤC SẢN PHẨM</label>
+                                    <label >Danh mục sản phẩm</label>
                                     <select class="form-control" name="category_id">
                                         @foreach ($categories as $category )
                                             <option value="{{ $category -> id }}">{{ $category -> name }}</option>
@@ -46,7 +46,7 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label >THƯƠNG HIỆU</label>
+                                    <label >Thương hiệu</label>
                                     <select class="form-control" name="brand_id">
                                         @foreach ($brands as $brand )
                                             <option value="{{ $brand -> id }}">{{ $brand -> name }}</option>
@@ -55,12 +55,12 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label >TÊN SẢN PHẨM</label>
+                                    <label >Tên sản phẩm</label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label >ĐƯỜNG DẪN</label>
+                                    <label >Đường dẫn</label>
                                     <input type="text" name="slug" class="form-control" required>
                                 </div>
 
@@ -69,21 +69,21 @@
                         <div class="row"> 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >GIÁ GỐC</label>
-                                    <input type="text" name="cost" class="form-control" required>
+                                    <label >Giá gốc</label>
+                                    <input type="text" name="cost" class="form-control number-input" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >GIÁ GIẢM</label>
-                                    <input type="text" name="sale_cost" class="form-control" required>
+                                    <label >Gía giảm</label>
+                                    <input type="text" name="sale_cost" class="form-control number-input" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >SỐ LƯỢNG</label>
+                                    <label >Số lượng</label>
                                     <input type="text" name="quantity" class="form-control" required>
                                 </div>
                             </div>
@@ -95,14 +95,14 @@
                             
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >MÀU SẮC</label>
+                                    <label >Màu sắc</label>
                                     <input type="text" name="color" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >PHIÊN BẢN</label>
+                                    <label >Phiên bản</label>
                                     <input type="text" name="option" class="form-control" required>
                                 </div>
                             </div>
@@ -111,15 +111,15 @@
                         <div class="row">
                             <div class="col-md-4">
                             <div class="mb-3">
-                                <label >TRẠNG THÁI</label>
-                                <input type="checkbox" name="status" class="" style="width: 30px; height : 30px;">
+                                <label for="status" >Trạng thái</label>
+                                <input type="checkbox" id="status" name="status" class="form-check-input" >
                             </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >BÁN CHẠY</label>
-                                    <input type="checkbox" name="trending" class="" style="width: 30px; height : 30px;">
+                                    <label for="trending" >Bán chạy</label>
+                                    <input type="checkbox" id="trending" name="trending" class="form-check-input" >
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                         <div class="row">
                             <div class="col-md-12">
                               <div class="mb-3">
-                                <label>MÔ TẢ</label>
+                                <label>Mô tả</label>
                                 <textarea name="description" class="form-control" rows="4"></textarea>
                               </div>
                             </div>

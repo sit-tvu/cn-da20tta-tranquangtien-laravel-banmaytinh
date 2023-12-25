@@ -1,4 +1,4 @@
-<div id="footer">
+{{-- <div id="footer">
     <div class="footer_left">
         <fieldset class="info_fieldset">
             <legend class="info-heading">MẠNG XÃ HỘI</legend>
@@ -68,4 +68,96 @@
         </div>
     </div>
 
-</div>
+</div> --}}
+
+<footer>
+    <div class="top-footer">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6">
+                    <h3>Get our latest news and special sales</h3>
+                    <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the
+                        legal notice.</p>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4 ">
+                    <form action="" method="POST" class="form-inline ">
+
+                        <div class="form-group">
+                            <input type="email" class="form-control  mr-3 " placeholder="Enter your email">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary  ">Get</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class="bottom-footer ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>YOUR ACCOUNT</h4>
+                    <p>Personal info</p>
+                    <p>Oders</p>
+                    <p>credit slips</p>
+                    <p>Addresses</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>CUSTOMER SERVICE</h4>
+                    <p>Monday to Friday</p>
+                    <p>10am - 6.30pm (NewYork time)</p>
+                    <p>0332716863</p>
+                    <p>nht@hmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>OUR GUARANTEES</h4>
+                    <p>Shipping in 3 days</p>
+                    <p>Free returns within 14 days</p>
+                    <p>Secure payments</p>
+
+                </div>
+                <div class="col-md-3">
+                    <h4>OUR COMPANY</h4>
+                    <p>Delivery</p>
+                    <p>Legal Notice</p>
+                    <p>Contact Us</p>
+                    <p>Terms and conditions of use</p>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <p>© 2023. Powered by Shopify</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/footer/footer1.png" alt="payment">
+                </div>
+                <div class="col-md-4">
+                    <a href=""><i class="ti-facebook"></i></a>
+                    <a href=""><i class="ti-youtube"></i></a>
+                    <a href=""><i class="ti-twitter"></i></a>
+                    <a href=""><i class="ti-instagram"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</footer>
+@push('script')
+<script src="{{ asset('user/js/jquery-3.3.1.slim.min.js') }}"></script>
+<script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('user/js/index.js') }}"></script>
+<script src="{{ asset('user/js/slideshow.js') }}"></script>
+@endpush
+

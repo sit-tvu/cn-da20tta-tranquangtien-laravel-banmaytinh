@@ -5,7 +5,7 @@
     <hr>
 
     <h2>Danh sách người dùng</h2>
-    <table class="table table-bordered table-striped">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,6 +23,5 @@
             @endforeach
         </tbody>
     </table>
-    {{$users ->links()}}
 </div>
 @endsection

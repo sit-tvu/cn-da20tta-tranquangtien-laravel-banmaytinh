@@ -14,6 +14,8 @@
 <!-- endinject -->
 <!-- plugin css for this page -->
 <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+{{-- <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/bootstrap.css')}}">
+<link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/bootstrap.min.css')}}"> --}}
 <!-- End plugin css for this page -->
 <!-- inject:css -->
 <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
@@ -37,20 +39,26 @@
   <script src="{{asset('admin/vendors/base/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="{{asset('admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
-  <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+  {{-- <script src="{{asset('admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script> --}}
+  <script src="{{asset('admin/vendors/datatables.net-bs4/jquery-3.7.0.js')}}"></script>
+  <script src="{{asset('admin/vendors/datatables.net-bs4/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.min.js')}}"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  {{asset('')}}
+
   <script src="{{asset('admin/js/off-canvas.js')}}"></script>
   <script src="{{asset('admin/js/hoverable-collapse.js')}}"></script>
   <script src="{{asset('admin/js/template.js')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{asset('admin/js/dashboard.js')}}"></script>
-  <script src="{{asset('admin/js/data-table.js')}}"></script>
+  {{-- <script src="{{asset('admin/js/data-table.js')}}"></script>
   <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
-  <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
+  <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script> --}}
+
+  <script src="{{asset('admin/js/formatnumber.js')}}"></script>
+  <script src="{{asset('admin/js/dtTable.js')}}"></script>
   <!-- End custom js for this page-->
     @livewireScripts
 </body>

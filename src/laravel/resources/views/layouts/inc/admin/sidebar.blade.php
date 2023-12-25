@@ -14,7 +14,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/admin/brands">
+        <a class="nav-link" href="/admin/brand">
           <i class="mdi mdi-plus-circle menu-icon"></i>
           <span class="menu-title">THƯƠNG HIỆU</span>
         </a>

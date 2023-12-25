@@ -37,26 +37,6 @@
                             <input type="checkbox" name="status" style="width:30px; height:30px;">
                         </div>
 
-                        {{-- <div class="con-md-12 mb3">
-                            <hr>
-                            <h4><b>Tags</b></h4>
-                        </div>
-
-                        <div class="mb3 col-md-12">
-                            <label for="">Meta_title</label>
-                            <input type="text" name="meta_title" class="form-control" required>
-                        </div>
-
-                        <div class="mb3 col-md-12">
-                            <label for="">Meta Keyword</label>
-                            <textarea type="text" name="meta_keyword" class="form-control" rows="3" required></textarea>
-                        </div>
-
-                        <div class="mb3 col-md-12">
-                            <label for="">Meta description</label>
-                            <textarea type="text" name="meta_description" class="form-control" rows="3" required></textarea>
-                        </div> --}}
-
                         <div class="mb3 col-md-12">
                             <button type="submit" class="btn btn-primary float-end">LƯU</button>
                         </div>
