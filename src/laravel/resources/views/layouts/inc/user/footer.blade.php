@@ -159,5 +159,7 @@
 <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('user/js/index.js') }}"></script>
 <script src="{{ asset('user/js/slideshow.js') }}"></script>
+<script src="{{ asset('user/js/imageChange.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endpush
 

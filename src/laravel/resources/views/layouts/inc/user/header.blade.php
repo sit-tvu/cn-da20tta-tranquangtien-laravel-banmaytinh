@@ -39,13 +39,13 @@
                         </li>
                         <li class="nav-item dropdown">
                            
-                            <a class="nav-link dropdown-toggle text-white" href="{{ url('/products') }}" id="dropdownId"
+                            <a class="nav-link dropdown-toggle text-white" id="dropdownId"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm </a>
                             <div class="dropdown-menu " aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="{{ url('#laptop') }}">Laptop</a>
-                                <a class="dropdown-item" href="{{ url('#macbook') }}">Macbook</a>
-                                <a class="dropdown-item" href="{{ url('#pc-maytinhdeban') }}">PC - máy tính để bàn</a>
-                                <a class="dropdown-item" href="{{ url('#phu-kien') }}">Phụ kiện</a>
+                                <a class="dropdown-item" href="{{ route('home') }}#laptop">Laptop</a>
+                                <a class="dropdown-item" href="{{ route('home') }}#macbook">Macbook</a>
+                                <a class="dropdown-item" href="{{ route('home') }}#pc-maytinhdeban">PC - máy tính để bàn</a>
+                                <a class="dropdown-item" href="{{ route('home') }}#phu-kien">Phụ kiện</a>
                             </div>
                         </li>
                         @if (Route::has('login'))
