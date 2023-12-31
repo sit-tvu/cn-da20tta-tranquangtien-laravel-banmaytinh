@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TienPC - Computer Shop</title>
     {{-- <link rel="stylesheet" href="styles.css"> --}}
     @push('styles')
@@ -58,8 +59,11 @@
                 <a href="{{ route('register') }}" class="nav-link text-white">Đăng ký</a>
             @endif
     </li>
+    @else
+    <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('cart') }}">Giỏ hàng</a>
+    </li>
     <li>
-        @else
             <div class="dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="{{ url('/') }}" id="dropdownId"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
@@ -74,8 +78,8 @@
                 </div>
             </div>
             </div>
-        @endguest
     </li>
+    @endguest
 @endif
 
                     </ul>

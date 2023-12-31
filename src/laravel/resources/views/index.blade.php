@@ -141,7 +141,7 @@
         <div class="row">
             @foreach($laptops as $key => $product)
                 <div class="col-md-4 col-lg-3">
-                    <a href="{{ route('product.detail', ['id' => $product->id]) }}">
+                    <a href="{{ route('product.detail', ['category' => $product->getCategorySlugAttribute(), 'brand' => $product->getBrandSlugAttribute(), 'slug' => $product->slug]) }}">
                         <div class="card card-product text-left">
                             <div class="card-image">
                                 @if($product->productImages->count() > 0)
@@ -207,7 +207,7 @@
         <div class="row">
             @foreach($macbooks as $key => $product)
                 <div class="col-md-4 col-lg-3">
-                    <a href="{{ route('product.detail', ['id' => $product->id]) }}">
+                    <a href="{{ route('product.detail', ['category' => $product->getCategorySlugAttribute(), 'brand' => $product->getBrandSlugAttribute(), 'slug' => $product->slug]) }}">
                         <div class="card card-product text-left">
                             <div class="card-image">
                                 @if($product->productImages->count() > 0)
@@ -270,7 +270,7 @@
           <div class="row">
               @foreach($pcs as $key => $product)
                   <div class="col-md-4 col-lg-3">
-                    <a href="{{ route('product.detail', ['id' => $product->id]) }}">
+                    <a href="{{ route('product.detail', ['category' => $product->getCategorySlugAttribute(), 'brand' => $product->getBrandSlugAttribute(), 'slug' => $product->slug]) }}">
                           <div class="card card-product text-left">
                               <div class="card-image">
                                   @if($product->productImages->count() > 0)
@@ -333,7 +333,7 @@
           <div class="row">
               @foreach($phukien as $key => $product)
                   <div class="col-md-4 col-lg-3">
-                      <a href="{{ route('product.detail', ['id' => $product->id]) }}">
+                      <a href="{{ route('product.detail', ['category' => $product->getCategorySlugAttribute(), 'brand' => $product->getBrandSlugAttribute(), 'slug' => $product->slug]) }}">
                           <div class="card card-product text-left">
                               <div class="card-image">
                                   @if($product->productImages->count() > 0)

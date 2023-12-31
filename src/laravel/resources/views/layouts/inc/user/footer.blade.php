@@ -137,9 +137,9 @@
                 <div class="col-md-4">
                     <p>© 2023. Powered by Shopify</p>
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <img src="img/footer/footer1.png" alt="payment">
-                </div>
+                </div> --}}
                 <div class="col-md-4">
                     <a href=""><i class="ti-facebook"></i></a>
                     <a href=""><i class="ti-youtube"></i></a>
@@ -158,8 +158,10 @@
 <script src="{{ asset('user/js/jquery-3.3.1.slim.min.js') }}"></script>
 <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('user/js/index.js') }}"></script>
-<script src="{{ asset('user/js/slideshow.js') }}"></script>
+{{-- <script src="{{ asset('user/js/slideshow.js') }}"></script> --}}
 <script src="{{ asset('user/js/imageChange.js') }}"></script>
+<script src="{{ asset('user/js/updateQuantity.js') }}"></script>
+<script src="{{ asset('user/js/updateTotal.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endpush
 

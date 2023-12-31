@@ -40,4 +40,15 @@ class Product extends Model
     return $this->belongsTo (Brand::class, 'brand_id', 'id');
     }
 
+    public function getCategorySlugAttribute()
+    {
+        return optional($this->category)->slug;
+    }
+
+    // Thêm mối quan hệ để lấy slug từ bảng Brand
+    public function getBrandSlugAttribute()
+    {
+        return optional($this->brand)->slug;
+    }
+
 }

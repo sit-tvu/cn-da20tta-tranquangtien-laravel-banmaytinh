@@ -23,7 +23,23 @@ Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::get('/', [App\Http\Controllers\ProductController::class, 'showAllProducts'])->name('home');
 
-Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+// Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+
+Route::get('/{category}/{brand}/{slug}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+Route::post('/add-to-cart/{slug}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [App\Http\Controllers\ProductController::class, 'showCart'])->name('cart');
+Route::get('/clear-cart', [App\Http\Controllers\ProductController::class, 'clearCart'])->name('cart.clear');
+Route::get('/remove-from-cart/{productId}', [App\Http\Controllers\ProductController::class, 'removeFromCart'])->name('removeFromCart');
+Route::post('/update-cart', [App\Http\Controllers\ProductController::class, 'updateCart'])->middleware('web')->name('updateCart');
+
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'show'])->name('checkout');
+Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'process'])->name('checkout.process');
+Route::get('/thankyou', function () {
+    return view('thankyou');
+})->name('thankyou');
+
+
+
 
 // Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
 

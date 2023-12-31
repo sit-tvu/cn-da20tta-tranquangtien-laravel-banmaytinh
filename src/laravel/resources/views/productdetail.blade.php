@@ -44,18 +44,41 @@
                 <del>{{ number_format($product->cost) }}đ</del> <ins>{{ number_format($product->sale_cost) }}đ</ins>
                 <p>*Giá trên đã bao gồm thuế VAT</p>
             </div>
+            <!-- Trong phần hiển thị sản phẩm -->
             <div class="row">
                 <div class="col-md-3 col-lg-2">
-                    <input type="number" value="1">
+                    <input type="number" name="quantity" id="quantityInput" value="1" onchange="updateQuantity()">
                 </div>
                 <div class="col-md-5 col-lg-4" id="cart">
-                    <button class="btn btn-danger btn-control " id="cart">Thêm vào giỏ</button>
+                    <form action="{{ route('cart.add', ['slug' => $product->slug]) }}" method="post" id="addToCartForm">
+                        @csrf
+                        <input type="hidden" name="quantity" id="hiddenQuantity" value="1">
+                        <button type="submit" class="btn btn-danger btn-control">Thêm vào giỏ</button>
+                    </form>
                 </div>
-                <div class="col-md-4 col-lg-3 " id="cart1">
+                <div class="col-md-4 col-lg-3" id="cart1">
                     <button class="btn btn-danger btn-control">Mua ngay</button>
                 </div>
-                <div class=" col-lg-3"></div>
+                <div class="col-lg-3"></div>
             </div>
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+{{-- @if(session('cart'))
+    <h2>Giỏ hàng của bạn</h2>
+    <ul>
+        @foreach(session('cart') as $productId => $item)
+            <li>
+                {{ $item['name'] }} - {{ $item['quantity'] }} x {{ $item['price'] }}đ
+            </li>
+        @endforeach
+    </ul>
+@else
+    <p>Giỏ hàng trống rỗng</p>
+@endif --}}
+
             <div class="row product-gift">
                 <div class="col-md-12">
                     <i class="ti-gift"> Chính sách bảo hành</i>
@@ -89,7 +112,7 @@
         <div class="row">
             @foreach($relatedProducts as $relatedProduct)
                 <div class="col-md-4 col-lg-3">
-                    <a href="{{ route('product.detail', ['id' => $relatedProduct->id]) }}">
+                    <a href="{{ route('product.detail', ['category' => $category->slug, 'brand' => $brand->slug, 'slug' => $relatedProduct->slug]) }}">
                         <div class="card card-product text-left">
                             <div class="card-image">
                                 <img class="card-img-top" src="{{ asset($relatedProduct->productImages->first()->image) }}" alt="">
