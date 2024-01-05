@@ -30,7 +30,7 @@
                                 <img src="{{ asset($item['image']) }}" alt="{{ $item['name'] }}" style="max-width: 50px; max-height: 50px;">
                             </td>
                             <td>
-                                <input type="number" name="quantity" class="quantity-input" value="{{ $item['quantity'] }}" min="1">
+                                <input type="number" name="quantity" class="quantity-input" value="{{ $item['quantity'] }}" min="1" readonly>
                             </td>
                             <td class="product-price">{{ number_format($item['price']) }}đ</td>
                             <td class="total">{{ number_format($item['quantity'] * $item['price']) }}đ</td>

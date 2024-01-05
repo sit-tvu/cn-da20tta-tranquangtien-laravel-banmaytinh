@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('user/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('user/css/icon/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('user/css/slideshow.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 @endpush
 </head>
 
@@ -23,7 +24,7 @@
     <div class="bottom-header">
         <div class="container">
             <nav class="navbar navbar-expand-sm navbar-light ">
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('picture/logo.png') }}" alt="logo1" width="100px" height="40px"></a>
+                <a class="navbar-brand text-white"  href="{{ url('/') }}">Tiến PC</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                     data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -34,9 +35,6 @@
 
                         <li class="nav-item">
                             <a href="{{ url('/') }}" class="nav-link text-white">Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
                            
@@ -81,6 +79,16 @@
     </li>
     @endguest
 @endif
+    <li class="nav-item">
+    <form action="{{ route('search.product') }}" method="GET">
+        <input type="text"  name="query" placeholder="Nhập tên sản phẩm">
+    </li>
+    <li>
+        <button  type="submit" style="background-color:#1a1c28;border: none"><svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </form>
+    </li>
+    
 
                     </ul>
                 </div>

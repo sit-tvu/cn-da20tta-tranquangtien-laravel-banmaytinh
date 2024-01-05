@@ -19,6 +19,8 @@ class CheckoutController extends Controller
         
         $cart = session('cart', []);
         $grandTotal = 0;
+        $buynow = session('buynow', []);
+        $buynowtotal = 0;
 
     foreach ($cart as $item) {
         if (isset($item['price'])) {
@@ -26,15 +28,21 @@ class CheckoutController extends Controller
         }
     }
 
-    return view('checkout', compact('cart', 'grandTotal'));
+    foreach ($buynow as $item1) {
+        if (isset($item1['price'])) {
+            $buynowtotal += $item1['quantity'] * $item1['price'];
+        }
+    }
+
+    return view('checkout', compact('cart', 'grandTotal','buynow','buynowtotal'));
     }
 
 
     public function process(Request $request)
     {
-        $user = Auth::user();
+        
 
-        $response = $this->orderController->createOrder($request, $user);
+        $response = $this->orderController->createOrder($request);
 
         if ($response->getStatusCode() === 200) {
             return redirect()->route('thankyou')->with('success', 'Đơn hàng đã được xác nhận!');

@@ -75,21 +75,14 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-md-6">
-                    <h3>Get our latest news and special sales</h3>
-                    <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the
-                        legal notice.</p>
+                    <h3>Trải nghiệm mua sắm tuyệt vời</h3>
+                    <p>Mang đến cho bạn những sản phẩm rẻ nhất và chất lượng nhất</p>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4 ">
-                    <form action="" method="POST" class="form-inline ">
-
-                        <div class="form-group">
-                            <input type="email" class="form-control  mr-3 " placeholder="Enter your email">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary  ">Get</button>
-                    </form>
-
+                    @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="btn btn primary">Đăng ký ngay</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -100,33 +93,26 @@
     <div class="bottom-footer ">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <h4>YOUR ACCOUNT</h4>
-                    <p>Personal info</p>
-                    <p>Oders</p>
-                    <p>credit slips</p>
-                    <p>Addresses</p>
+                <div class="col-md-4">
+                    <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+                    <p>Từ Thứ 2 đến Thứ 7</p>
+                    <p>10am - 6.30pm</p>
+                    <p>033 7677 141</p>
+                    <p>sostien0409@gmail.com</p>
                 </div>
-                <div class="col-md-3">
-                    <h4>CUSTOMER SERVICE</h4>
-                    <p>Monday to Friday</p>
-                    <p>10am - 6.30pm (NewYork time)</p>
-                    <p>0332716863</p>
-                    <p>nht@hmail.com</p>
-                </div>
-                <div class="col-md-3">
-                    <h4>OUR GUARANTEES</h4>
-                    <p>Shipping in 3 days</p>
-                    <p>Free returns within 14 days</p>
-                    <p>Secure payments</p>
+                <div class="col-md-4">
+                    <h4>CHÍNH SÁCH</h4>
+                    <p>Giao hàng nhanh trong vòng 3 ngày</p>
+                    <p>Hoàn trả trong vòng 1 tháng</p>
+                    <p>Thanh toán khi nhận hàng</p>
 
                 </div>
-                <div class="col-md-3">
-                    <h4>OUR COMPANY</h4>
-                    <p>Delivery</p>
-                    <p>Legal Notice</p>
-                    <p>Contact Us</p>
-                    <p>Terms and conditions of use</p>
+                <div class="col-md-4">
+                    <h4>CÔNG TY</h4>
+                    <p>CÔNG TY TNHH TMDV TIENPC</p>
+                    <p>SỐ 123, Đường X, Phường Y, TP Z</p>
+                    <p>Liên hệ</p>
+                    <p>Điều khoản và dịch vụ</p>
                 </div>
 
 
@@ -135,7 +121,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <p>© 2023. Powered by Shopify</p>
+                    <p>© 2023. Design by Tiensv3</p>
                 </div>
                 {{-- <div class="col-md-4">
                     <img src="img/footer/footer1.png" alt="payment">
@@ -163,5 +149,6 @@
 <script src="{{ asset('user/js/updateQuantity.js') }}"></script>
 <script src="{{ asset('user/js/updateTotal.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @endpush
 

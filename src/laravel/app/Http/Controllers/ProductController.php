@@ -26,9 +26,42 @@ public function showAllProducts()
     $phukien = Product::where('category_id', 4)
                     ->where('status', 0)
                     ->get();
+    $trendingProduct = Product::where('trending', 1)
+                    ->where('status', 0)
+                    ->get();
     
 
-    return view("index", compact('laptops', 'macbooks','pcs','phukien'));
+    return view("index", compact('laptops', 'macbooks','pcs','phukien','trendingProduct'));
+}
+
+public function showProductBrand()
+{
+    $lenovos = Product::where('brand_id', 1)
+                   ->where('status', 0)
+                   ->get();
+    $asuss = Product::where('brand_id', 2)
+                    ->where('status', 0)
+                    ->get();
+    $acers = Product::where('brand_id', 3)
+                    ->where('status', 0)
+                    ->get();
+    $apples = Product::where('brand_id', 4)
+                    ->where('status', 0)
+                    ->get();
+    
+
+    return view("brand", compact('lenovos', 'asuss','acers','apples'));
+}
+
+public function showSearchProduct(Request $request)
+{
+    $query = $request->input('query');
+    $searchProduct = Product::where('name', 'like', '%' . $query . '%')
+                   ->where('status', 0)
+                   ->get();
+
+    return view('search', ['searchProduct' => $searchProduct, 'query' => $query]);
+
 }
 
 // public function showProductDetail($id)
@@ -167,6 +200,27 @@ public function updateCart(Request $request)
 
         return $grandTotal;
     }
+
+    public function buyNow(Request $request, $slug)
+{
+    $product = Product::where('slug', $slug)->firstOrFail();
+
+    $quantity = $request->input('quantity1', 1);
+
+    $buynow = session()->get('buynow', []);
+
+        $buynow[$product->id] = [
+            'product_id' => $product->id,
+            'name' => $product->name,
+            'quantity' => $quantity,
+            'price' => $product->sale_cost,
+            'image' => $product->productImages->first()->image ?? null,
+        ];
+
+    session(['buynow' => $buynow]);
+
+    return redirect()->route('checkout');
+}
 
 
 }

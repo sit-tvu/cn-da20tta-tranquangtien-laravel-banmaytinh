@@ -93,20 +93,73 @@
   <div class="container">
       <div class="row">
           <div class="col-md-3 icon-shop-img-content">
-              <a href="#"> <img src="{{ asset('picture/Acer.jpg') }}" alt="acer"></a>
+              <a href="{{ route('product_brands') }}#acer"> <img src="{{ asset('picture/acer1.png') }}" alt="acer"></a>
           </div>
           <div class="col-md-3 icon-shop-img-content">
-              <a href="#"> <img src="{{ asset('picture/Asus.jpg') }}" alt="asus"></a>
+              <a href="{{ route('product_brands') }}#asus"> <img src="{{ asset('picture/asus1.jpg') }}" alt="asus"></a>
           </div>
           <div class="col-md-3 icon-shop-img-content">
-              <a href="#"> <img src="{{ asset('picture/Lenovo.jpg') }}" alt="levovo"></a>
+              <a href="{{ route('product_brands') }}#lenovo"> <img src="{{ asset('picture/lenovo1.jpg') }}" alt="levovo"></a>
           </div>
           <div class="col-md-3 icon-shop-img-content">
-              <a href="#"> <img src="{{ asset('picture/MSI.jpg') }}" alt="msi"></a>
+              <a href="{{ route('product_brands') }}#apple"> <img src="{{ asset('picture/apple1.jpg') }}" alt="apple"></a>
           </div>
       </div>
   </div>
 </div>
+
+<!-- menu bar shop -->
+
+<div class="container">
+    <div class="nav-shop">
+        <div class="row">
+  
+            <div class="col-md-4 " id="trendingProduct">
+                <i class="ti-view-list"> Bán chạy</i>
+            </div>
+  
+        </div>
+  
+    </div>
+  </div>
+  <!-- menu 2 -->
+  <!-- menu-shop -->
+  <div class="menu">
+      <div class="container">
+          <div class="row">
+              @foreach($trendingProduct as $key => $product)
+                  <div class="col-md-4 col-lg-3">
+                      <a href="{{ route('product.detail', ['category' => $product->getCategorySlugAttribute(), 'brand' => $product->getBrandSlugAttribute(), 'slug' => $product->slug]) }}">
+                          <div class="card card-product text-left">
+                              <div class="card-image">
+                                  @if($product->productImages->count() > 0)
+                                      <img class="card-img-top" src="{{ asset('' . $product->productImages[0]->image) }}" alt="{{ $product->name }}">
+                                  @else
+                                      <img class="card-img-top" src="{{ asset('' . $product->image) }}" alt="{{ $product->name }}">
+                                  @endif
+                              </div>
+  
+                              <div class="card-body">
+                                  <h5 class="card-title">{{ $product->name }}</h5>
+                                  <del>{{ number_format($product->cost) }}đ</del> <ins>{{ number_format($product->sale_cost) }}đ</ins>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+  
+                  <!-- Nếu là sản phẩm thứ 4, thêm dòng mới -->
+                  @if(($key + 1) % 4 == 0)
+                      </div>
+                      <div class="row">
+                          <br>
+                      </div>
+                      <div class="row">
+                  @endif
+              @endforeach
+          </div>
+      </div>
+  </div>
+
 <!-- menu bar shop -->
 <br>
 <div class="container">
@@ -182,19 +235,6 @@
           <div class="col-md-4  " id="macbook">
               <i class="ti-view-list"> Macbook</i>
           </div>
-          {{-- <div class="col-md-2 nav-item">
-              <a href="#">PC gaming</a>
-
-          </div>
-          <div class="col-md-2 nav-item">
-              <a href="#">PC đồ họa</a>
-          </div>
-          <div class="col-md-2 nav-item">
-              <a href="#">PC học tập</a>
-          </div>
-          <div class="col-md-2 nav-item">
-              <a href="#">Pc văn phòng</a>
-          </div> --}}
 
       </div>
 

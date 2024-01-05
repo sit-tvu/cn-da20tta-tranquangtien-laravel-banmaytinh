@@ -76,7 +76,7 @@
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label >Gía giảm</label>
+                                    <label >Giá giảm</label>
                                     <input type="text" name="sale_cost" class="form-control number-input" required>
                                 </div>
                             </div>

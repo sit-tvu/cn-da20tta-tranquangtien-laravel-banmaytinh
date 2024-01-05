@@ -47,7 +47,7 @@
             <!-- Trong phần hiển thị sản phẩm -->
             <div class="row">
                 <div class="col-md-3 col-lg-2">
-                    <input type="number" name="quantity" id="quantityInput" value="1" onchange="updateQuantity()">
+                    <input type="number" name="quantity" id="quantityInput" value="1" onchange="updateQuantity()" min="1" max="30">
                 </div>
                 <div class="col-md-5 col-lg-4" id="cart">
                     <form action="{{ route('cart.add', ['slug' => $product->slug]) }}" method="post" id="addToCartForm">
@@ -57,7 +57,11 @@
                     </form>
                 </div>
                 <div class="col-md-4 col-lg-3" id="cart1">
-                    <button class="btn btn-danger btn-control">Mua ngay</button>
+                    <form action="{{ route('buynow', ['slug' => $product->slug]) }}" method="post" id="buyNowForm">
+                        @csrf
+                        <input type="hidden" name="quantity1" id="hiddenQuantity1" value="1">
+                        <button type="submit" class="btn btn-danger btn-control">Mua ngay</button>
+                    </form>
                 </div>
                 <div class="col-lg-3"></div>
             </div>

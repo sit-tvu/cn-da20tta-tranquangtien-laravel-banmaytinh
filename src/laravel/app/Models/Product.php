@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\ProductImage;
-use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Category;
+use App\Models\OrderDetail;
+use App\Models\ProductImage;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Product extends Model
 {
     use HasFactory;
@@ -30,7 +32,6 @@ class Product extends Model
     {
         return $this->hasMany(ProductImage::class, 'product_id','id');
     }
-    
     public function category()
     {
     return $this->belongsTo (Category::class, 'category_id', 'id');
@@ -45,7 +46,6 @@ class Product extends Model
         return optional($this->category)->slug;
     }
 
-    // Thêm mối quan hệ để lấy slug từ bảng Brand
     public function getBrandSlugAttribute()
     {
         return optional($this->brand)->slug;

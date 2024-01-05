@@ -25,21 +25,6 @@ Route::get('/', [App\Http\Controllers\ProductController::class, 'showAllProducts
 
 // Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 
-Route::get('/{category}/{brand}/{slug}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
-Route::post('/add-to-cart/{slug}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('cart.add');
-Route::get('/cart', [App\Http\Controllers\ProductController::class, 'showCart'])->name('cart');
-Route::get('/clear-cart', [App\Http\Controllers\ProductController::class, 'clearCart'])->name('cart.clear');
-Route::get('/remove-from-cart/{productId}', [App\Http\Controllers\ProductController::class, 'removeFromCart'])->name('removeFromCart');
-Route::post('/update-cart', [App\Http\Controllers\ProductController::class, 'updateCart'])->middleware('web')->name('updateCart');
-
-Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'show'])->name('checkout');
-Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'process'])->name('checkout.process');
-Route::get('/thankyou', function () {
-    return view('thankyou');
-})->name('thankyou');
-
-
-
 
 // Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']);
 
@@ -81,4 +66,33 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
             Route::get('/users','index');
         });
 
+        Route::controller(App\Http\Controllers\Admin\OrderController::class)->group(function(){
+            Route::get('/orders','index');
+            Route::get('/orders/{id}/confirm', 'confirmOrder')->name('admin.orders.confirm');
+            Route::get('/orders/{id}/cancel', 'cancelOrder')->name('admin.orders.cancel');
+            Route::post('/orders/filter', 'filterOrders')->name('admin.orders.filter');
+        });
+
+        Route::get('/admin/orders/{order}/details', [App\Http\Controllers\Admin\OrderDetailController::class, 'show'])->name('admin.orders.details.show');
+
 });
+
+Route::get('/{category}/{brand}/{slug}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+Route::get('/product_brands', [App\Http\Controllers\ProductController::class, 'showProductBrand'])->name('product_brands');
+Route::get('/search', [App\Http\Controllers\ProductController::class, 'showSearchProduct'])->name('search.product');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cart', [App\Http\Controllers\ProductController::class, 'showCart'])->name('cart');
+    Route::get('/clear-cart', [App\Http\Controllers\ProductController::class, 'clearCart'])->name('cart.clear');
+    Route::get('/remove-from-cart/{productId}', [App\Http\Controllers\ProductController::class, 'removeFromCart'])->name('removeFromCart');
+    Route::post('/update-cart', [App\Http\Controllers\ProductController::class, 'updateCart'])->middleware('web')->name('updateCart');
+    Route::post('/add-to-cart/{slug}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('cart.add');
+
+});
+
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'show'])->name('checkout');
+Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'process'])->name('checkout.process');
+Route::get('/thankyou', function () {
+    return view('thankyou');
+})->name('thankyou');
+
+Route::post('/buynow/{slug}', [App\Http\Controllers\ProductController::class, 'buyNow'])->name('buynow');

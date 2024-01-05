@@ -25,7 +25,7 @@ class ProductController extends Controller
         {
             $categories = Category::all();
             $brands = Brand::all();
-            return view("admin.products.create",compact(["categories", "brands"]));
+            return view('admin.products.create', compact(['categories', 'brands']));
 
         }
         public function store(ProductFormRequest $request){
