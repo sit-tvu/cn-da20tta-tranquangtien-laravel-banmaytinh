@@ -1,0 +1,48 @@
+/* CSS để tạo hình chữ nhật */
+.rectangle {
+    width: 100%;
+    height: auto;
+    border: 2px solid #3498db;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS để định dạng nội dung bên trong hình chữ nhật */
+.info {
+    text-align: center;
+}
+
+/* CSS để định dạng tiêu đề */
+.info-title {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    color: #3498db;
+    margin: 0;
+}
+
+/* CSS để định dạng đường kẻ chia tiêu đề và nội dung */
+.cut-line {
+    margin: 10px 0;
+    width: 50px;
+    height: 2px;
+    background-color: #3498db;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS để định dạng giá trị thông tin */
+.info-value {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.col-limit {
+    max-height: 120px;
+    margin: auto;
+}

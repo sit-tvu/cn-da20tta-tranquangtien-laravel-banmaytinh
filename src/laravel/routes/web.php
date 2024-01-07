@@ -36,7 +36,7 @@ Route::get('/', [App\Http\Controllers\ProductController::class, 'showAllProducts
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 //dashboard routes
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
-
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'Count']);
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function(){
         Route::get('/category','index');
         Route::get('/category/create','create');
@@ -80,6 +80,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 Route::get('/{category}/{brand}/{slug}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 Route::get('/product_brands', [App\Http\Controllers\ProductController::class, 'showProductBrand'])->name('product_brands');
 Route::get('/search', [App\Http\Controllers\ProductController::class, 'showSearchProduct'])->name('search.product');
+Route::get('/searchorder', [App\Http\Controllers\OrderController::class, 'lookupResult'])->name('order.lookup');
 Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [App\Http\Controllers\ProductController::class, 'showCart'])->name('cart');
     Route::get('/clear-cart', [App\Http\Controllers\ProductController::class, 'clearCart'])->name('cart.clear');

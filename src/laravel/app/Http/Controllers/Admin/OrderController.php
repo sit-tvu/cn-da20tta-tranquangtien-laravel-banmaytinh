@@ -68,7 +68,6 @@ public function cancelOrder($id)
     return redirect()->back()->with('error', 'Không thể xác nhận đơn hàng.');
 }
 
-
     public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class);

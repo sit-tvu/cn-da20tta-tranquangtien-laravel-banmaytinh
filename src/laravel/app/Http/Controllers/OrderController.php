@@ -52,4 +52,13 @@ class OrderController extends Controller
         return response()->json(['message' => 'Order created successfully']);
     }
 
+    public function lookupResult(Request $request)
+    {
+        $phoneNumber = $request->input('tracuusp');
+
+        $myorders = Order::where('phone', $phoneNumber)->get();
+
+        return view('searchmyorder', ['myorders' => $myorders]);
+    }
+
 }

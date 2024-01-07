@@ -30,6 +30,9 @@ Mở dòng lệnh và chạy lệnh sau để tạo một dự án Laravel mới
 Chạy câu lệnh sau để tạo ra cơ sở dữ liệu từ các tệp migration
 
 	 php artisan migrate
+Hoặc
+
+Thêm cơ sở dữ liệu từ đường dẫn src/database
 
 Chạy câu lệnh sau để khởi động dự án
 
@@ -48,3 +51,5 @@ Tên: Trần Quang Tiến
 SĐT: 0337677141
 
 Email: sostien0409@gmail.com
+
+Github: tiensv3

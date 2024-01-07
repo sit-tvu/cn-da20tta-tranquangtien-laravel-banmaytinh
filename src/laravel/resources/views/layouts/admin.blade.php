@@ -19,6 +19,7 @@
 <!-- End plugin css for this page -->
 <!-- inject:css -->
 <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('admin/css/style1.css')}}">
 <!-- endinject -->
 <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
   @livewireStyles
