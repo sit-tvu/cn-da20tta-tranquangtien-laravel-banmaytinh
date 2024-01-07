@@ -21,11 +21,15 @@ Trước tiên, bạn cần cài đặt Composer. Bạn có thể tải Composer
 Cài đặt XAMPP để có môi trường phát triển, bao gồm Apache, PHP và cơ sở dữ liệu. Bạn có thể tải XAMPP phiên bản từ 8.0 đến 8.2 tại [trang tải XAMPP](https://www.apachefriends.org/download.html).
 
 ### Bước 3: Cài đặt Laravel 9.1.8
-Mở dòng lệnh và chạy lệnh sau để tạo một dự án Laravel mới với phiên bản 9.1.8:
+Mở dòng lệnh và chạy lệnh sau để tạo một dự án Laravel mới với phiên bản 9.1.8
 
 	composer create-project laravel/laravel "9.1.8"
 
 ## Sử dụng
+
+Tải mã nguồn về máy
+
+	git clone https://github.com/tiensv3/cn-da20tta-tranquangtien-laravel-banmaytinh.git
 
 Chạy câu lệnh sau để tạo ra cơ sở dữ liệu từ các tệp migration
 
